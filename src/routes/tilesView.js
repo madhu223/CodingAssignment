@@ -8,7 +8,7 @@ export default function TilesView() {
     navigate('/');
   }
   return (
-    <div>
+    <div className='container'>
       <Link to='/gridView'>GridView</Link>
       <main style={{ padding: '1rem 0' }}>
         <h2>Tiles View</h2>

@@ -80,41 +80,43 @@ function LoginPage() {
       )} */}
 
       <form className='form-group' onSubmit={handleSubmit}>
-        <h2> LoginPage </h2>
-        <br />
-        <div>
-          <label htmlFor='name'>username</label> &nbsp;
-          <input
-            type='text'
-            id='name'
-            name='username'
-            value={formData.username}
-            onChange={handleChange}
-            placeholder='Enter username'
-            required
-          />
-        </div>{' '}
-        <p>{formErrors.username}</p>
-        <br />
-        <div>
-          <label htmlFor='password'>password</label> &nbsp;
-          <input
-            type='password'
-            id='password'
-            name='password'
-            value={formData.password}
-            onChange={handleChange}
-            placeholder='Enter password'
-            required
-          />
+        <div className='container'>
+          <h2> Login Page </h2>
+          <br />
+          <div>
+            <label htmlFor='name'>username</label> &nbsp;
+            <input
+              type='text'
+              id='name'
+              name='username'
+              value={formData.username}
+              onChange={handleChange}
+              placeholder='Enter username'
+              required
+            />
+          </div>{' '}
+          <p>{formErrors.username}</p>
+          <br />
+          <div>
+            <label htmlFor='password'>password</label> &nbsp;
+            <input
+              type='password'
+              id='password'
+              name='password'
+              value={formData.password}
+              onChange={handleChange}
+              placeholder='Enter password'
+              required
+            />
+          </div>
+          <p>{formErrors.password}</p>
+          <br />
+          &nbsp;{' '}
+          <button type='submit' className='btn btn-primary'>
+            Login
+          </button>
+          {/* <button onClick={handleClick}>Login</button> */}
         </div>
-        <p>{formErrors.password}</p>
-        <br />
-        &nbsp;{' '}
-        <button type='submit' className='btn btn-primary'>
-          Login
-        </button>
-        {/* <button onClick={handleClick}>Login</button> */}
       </form>
     </div>
   );

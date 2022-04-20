@@ -8,7 +8,7 @@ export default function GridView() {
     navigate('/');
   }
   return (
-    <div>
+    <div className='container'>
       <Link to='/tilesView'>TilesView</Link>
       <main style={{ padding: '1rem 0' }}>
         <h2>Grid View</h2>
