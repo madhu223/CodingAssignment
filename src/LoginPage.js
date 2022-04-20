@@ -96,7 +96,6 @@ function LoginPage() {
         </div>{' '}
         <p>{formErrors.username}</p>
         <br />
-        <br />
         <div>
           <label htmlFor='password'>password</label> &nbsp;
           <input
@@ -111,9 +110,9 @@ function LoginPage() {
         </div>
         <p>{formErrors.password}</p>
         <br />
-        <br />
+        &nbsp;{' '}
         <button type='submit' className='btn btn-primary'>
-          login
+          Login
         </button>
         {/* <button onClick={handleClick}>Login</button> */}
       </form>
