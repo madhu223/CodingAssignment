@@ -20,15 +20,15 @@ function LoginPage() {
     // let isValid = validate(formData);
     // console.log(isValid);
     setFormErrors(validate(formData));
-    // setIsSubmit(true);
+    setIsSubmit(true);
 
-    let resu = () => {
-      if (Object.keys(formErrors).length === 0 && isSubmit) {
-      }
-      return true;
-    };
-    setIsSubmit(resu());
-    navigate('gridView');
+    // let resu = () => {
+    //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+    //   }
+    //   return;
+    // };
+    // setIsSubmit(resu());
+    // navigate('gridView');
     // {
     //   Object.keys(formErrors).length === 0 && isSubmit ? (
     //     navigate('/dashboard')
@@ -46,6 +46,7 @@ function LoginPage() {
   useEffect(() => {
     // console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
+      navigate('gridView');
       console.log(formData);
     }
   }, [formErrors]);
