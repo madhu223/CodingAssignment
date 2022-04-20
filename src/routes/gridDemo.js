@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -10,7 +10,7 @@ const GridDemo = () => {
        {make: "Ford", model: "Mondeo", price: 32000},
        {make: "Porsche", model: "Boxter", price: 72000}
    ]);*/
-
+  const gridRef = useRef();
   const [rowData, setRowData] = useState([]);
 
   /*useEffect(() => {
@@ -50,6 +50,12 @@ const GridDemo = () => {
     { headeName: 'Phone Number', field: 'phone' },
   ]);
 
+  const onFilterTextBoxChanged = useCallback(() => {
+    gridRef.current.api.setQuickFilter(
+      document.getElementById('filter-text-box').value
+    );
+  }, []);
+
   const onGridReady = (params) => {
     console.log('grid is ready');
     fetch('https://randomuser.me/api?results=50')
@@ -72,8 +78,16 @@ const GridDemo = () => {
 
   return (
     <div className='ag-theme-alpine' style={{ height: 550, width: 1000 }}>
+      Quick Filter:{' '}
+      <input
+        type='text'
+        id='filter-text-box'
+        placeholder='Filter...'
+        onInput={onFilterTextBoxChanged}
+      />
       <AgGridReact
         //rowData={rowData}
+        ref={gridRef}
         columnDefs={columnDefs}
         defaultColDef={defaultColDef}
         pagination={true}
