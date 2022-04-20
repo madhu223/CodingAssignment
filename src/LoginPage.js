@@ -60,13 +60,13 @@ function LoginPage() {
       errors.username = 'Username is required!';
     } else if (!regex.test(values.username)) {
       errors.username =
-        'username should contain only alphanumeric and no space!';
+        'username should contain only alphanumeric  without space space!';
     }
     if (!values.password) {
       errors.password = 'Password is required';
     } else if (!regexp.test(values.password)) {
       errors.password =
-        'username should contain only alphanumeric and 1 special charector!';
+        'password should contain only alphanumeric and 1 special charector!';
     }
     return errors;
   };
@@ -112,7 +112,7 @@ function LoginPage() {
         <p>{formErrors.password}</p>
         <br />
         <br />
-        <button type='submit' className='btn btn-primary'>
+        <button type='login' className='btn btn-primary'>
           submit
         </button>
         {/* <button onClick={handleClick}>Login</button> */}
