@@ -49,7 +49,7 @@ function LoginPage() {
       navigate('gridView');
       console.log(formData);
     }
-  }, [formErrors]);
+  }, [formErrors, isSubmit]);
   const validate = (values) => {
     const errors = {};
     //  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -111,10 +111,7 @@ function LoginPage() {
           </div>
           <p>{formErrors.password}</p>
           <br />
-          &nbsp;{' '}
-          <button type='submit' className='btn btn-primary'>
-            Login
-          </button>
+          &nbsp; <button type='submit'>Login</button>
           {/* <button onClick={handleClick}>Login</button> */}
         </div>
       </form>

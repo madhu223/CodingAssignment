@@ -66,6 +66,16 @@ const GridDemo = () => {
       });
   };
 
+  async function refreshPage() {
+    let resp = await fetch('https://randomuser.me/api?results=50')
+      // resp =await (resp=>resp.json())
+      .then((resp) => resp.json())
+
+      .then((resp) => {
+        gridRef.current.api.setRowData(resp.results);
+      });
+  }
+
   function pictureFormatter(params) {
     //console.log(params.value.thumbnail)
     return <img src={params.value.thumbnail}></img>;
@@ -85,6 +95,9 @@ const GridDemo = () => {
         placeholder='Filter...'
         onInput={onFilterTextBoxChanged}
       />
+      <button type='submit' onClick={refreshPage}>
+        Refresh
+      </button>
       <AgGridReact
         //rowData={rowData}
         ref={gridRef}

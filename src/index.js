@@ -1,5 +1,5 @@
 import { render } from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import App from './App';
 import GridView from './routes/gridView';
 import TilesView from './routes/tilesView';
@@ -14,6 +14,7 @@ render(
       <Route path='/dashboard' element={<Dashboard />}></Route>
       <Route path='gridView' element={<GridView />} />
       <Route path='tilesView' element={<TilesView />} />
+      <Route path='*' element={<Navigate to='/' />} />
     </Routes>
   </BrowserRouter>,
   rootElement
